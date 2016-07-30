@@ -10,23 +10,24 @@ namespace VirtualPet
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Welcome to virtual pet!\nIn this game you are charged with taking care a Cairn Terrier.");
-            Pet Ben = new Pet();
+            Pet Ruby = new Pet();
+
+            Console.WriteLine("Welcome to virtual pet!\nIn this game you are charged with taking care of a Cairn Terrier named Ruby.");
+            Console.WriteLine("Her hunger, thirst, and sleep levels are below.\nYour task is to not let them get too low.");
+  
             string something;
-
-
-
+            
             do
 
             {
-                Ben.PrintStats();
-                Ben.Tick();
-
+                Ruby.PrintStats();
+                Ruby.Tick();
+                Ruby.RunAway();
 
                 Console.WriteLine("What would you like to do?  Your choices are:");
-                Console.WriteLine("1. Feed pet");
-                Console.WriteLine("2. Water pet");
-                Console.WriteLine("3. Put pet to bed");
+                Console.WriteLine("1. Feed Ruby");
+                Console.WriteLine("2. Water Ruby");
+                Console.WriteLine("3. Put Ruby to bed");
                 Console.WriteLine("Choose a number:");
 
 
@@ -34,16 +35,16 @@ namespace VirtualPet
 
                 if (choice == 1)
                 {
-                    Ben.Feed();
+                    Ruby.Feed();
                 }
                 else if (choice == 2)
                 {
-                    Ben.Drink();
+                    Ruby.Drink();
 
                 }
                 else if (choice == 3)
                 {
-                    Ben.Nap();
+                    Ruby.Nap();
                 }
 
                 else
@@ -52,21 +53,13 @@ namespace VirtualPet
                 }
 
 
-                Console.WriteLine("Do you want to go again?");
-                something = Console.ReadLine();
-
+                Console.WriteLine("Do you want to continue?");
+                something = Console.ReadLine().ToUpper();
                 Console.Clear();
+
             }
 
-            while (something == "yes");
-
-            {
-
-                Ben.PrintStats();
-            }
-
-
-
+            while (something == "YES");
 
 
 
