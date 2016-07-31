@@ -15,14 +15,15 @@ namespace VirtualPet
             Console.WriteLine("Welcome to virtual pet!\nIn this game you are charged with taking care of a Cairn Terrier named Ruby.");
             Console.WriteLine("Her hunger, thirst, and sleep levels are below.\nYour task is to not let them get too low.");
   
-            string something;
-            
+            string cont;
+
+
             do
 
             {
                 Ruby.PrintStats();
                 Ruby.Tick();
-                Ruby.RunAway();
+                Ruby.Neglect();
 
                 Console.WriteLine("What would you like to do?  Your choices are:");
                 Console.WriteLine("1. Feed Ruby");
@@ -50,22 +51,24 @@ namespace VirtualPet
                 else
                 {
                     Console.WriteLine(" Choose a number between 1-3");
+                    
                 }
 
-
                 Console.WriteLine("Do you want to continue?");
-                something = Console.ReadLine().ToUpper();
+                cont = Console.ReadLine().ToUpper();
                 Console.Clear();
 
             }
 
-            while (something == "YES");
+            while (cont == "YES");
 
 
 
 
 
 
+
+            
         }
 
     }

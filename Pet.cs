@@ -58,9 +58,9 @@ namespace VirtualPet
 
 
         //Methods 
-
-
-               
+        
+            
+         //Feed Method                          
 
     public void Feed()
 
@@ -149,6 +149,8 @@ namespace VirtualPet
 
         }
 
+        //Tick Method
+
         public void Tick()
         {
             hunger = hunger - 5;
@@ -160,20 +162,21 @@ namespace VirtualPet
         //Runaway Method
 
   
-
-        public void RunAway()
+        public void Neglect()
         {
 
             if (hunger < 10||thirst<10||sleep<10)
 
             {
-                Console.WriteLine("Ruby ran away!");
+                Console.WriteLine("You are neglecting your pet!");
+                             
                                 
             }
         }
 
+        //Stats Method
 
-public void PrintStats()
+        public void PrintStats()
 
         {
             Console.WriteLine("Ruby's levels are as follows:");
