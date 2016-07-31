@@ -65,7 +65,7 @@ namespace VirtualPet
     public void Feed()
 
         {
-            Console.WriteLine("Would you like to feed Ruby?");
+            Console.WriteLine("Are you sure you would you like to feed Ruby?");
             string feedAnswer = Console.ReadLine().ToUpper();
 
             if (feedAnswer == "YES")
@@ -104,7 +104,7 @@ namespace VirtualPet
         public void Drink()
 
         {
-            Console.WriteLine("Would you like to give Ruby water?");
+            Console.WriteLine("Are you sure you would you like to give Ruby water?");
             string drinkAnswer = Console.ReadLine().ToUpper();
 
             if (drinkAnswer == "YES")
@@ -128,7 +128,7 @@ namespace VirtualPet
         public void Nap()
 
         {
-            Console.WriteLine("Would you like to put Ruby to bed?");
+            Console.WriteLine("Are you sure you want to put Ruby to bed?");
             string sleepAnswer = Console.ReadLine().ToUpper();
 
             if (sleepAnswer == "YES")
@@ -142,7 +142,7 @@ namespace VirtualPet
             else if (sleepAnswer == "NO")
 
             {
-                Console.WriteLine("But she's tred! What kind of person are you? :(");
+                Console.WriteLine("But she's tired! What kind of person are you? :(");
                 sleep = sleep - 10;
             }
 
@@ -159,19 +159,21 @@ namespace VirtualPet
 
         }
 
-        //Runaway Method
+        //Neglect Method
 
   
         public void Neglect()
         {
 
-            if (hunger < 10||thirst<10||sleep<10)
+            if (hunger < 0 || thirst < 0 || sleep < 0)
+            
+                {
+                    Console.WriteLine("You neglected Ruby! She ran away to someone who cares. Goodbye");
 
-            {
-                Console.WriteLine("You are neglecting your pet!");
-                             
-                                
-            }
+                    Environment.Exit(0);
+                }
+                
+            
         }
 
         //Stats Method

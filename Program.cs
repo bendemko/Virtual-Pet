@@ -10,14 +10,17 @@ namespace VirtualPet
     {
         static void Main(string[] args)
         {
+            //Create new object
             Pet Ruby = new Pet();
 
+            //User Instructions
             Console.WriteLine("Welcome to virtual pet!\nIn this game you are charged with taking care of a Cairn Terrier named Ruby.");
-            Console.WriteLine("Her hunger, thirst, and sleep levels are below.\nYour task is to not let them get too low.");
+            Console.WriteLine("Her hunger, thirst, and sleep levels are listed below.\nYour task is to keep them above zero by feeding and watering her and\nletting her rest.\nAs you do these things her numbers increase.  Otherwise they decrease.");
   
             string cont;
 
 
+            //Do While loop that runs as long as user chooses to continue and scores remain above 0
             do
 
             {
@@ -65,6 +68,7 @@ namespace VirtualPet
 
 
 
+            Console.ReadKey();
 
 
 
